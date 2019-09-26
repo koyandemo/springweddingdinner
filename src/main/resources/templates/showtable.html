@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+
+        body{
+            background-color:#cdd8e1;
+            padding-top: 3px;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th>RoomDescription</th>
+        <th>RoomFees</th>
+        <th>PriceDescription</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="dd:${dinners}">
+        <td > <small th:text="${dd.getRetaurantname()}"></small></td>
+        <td > <small th:text="${dd.getPhonenumber()}"></small></td>
+        <td><small th:text="${dd.getAddress()}"></small></td>
+        <td><small th:text="${dd.getDescription()}"></small></td>
+        <td><small th:text="${dd.getRoomdescription()}"></small></td>
+        <td><small th:text="${dd.getRoomfees()}"></small></td>
+        <td><small th:text="${dd.getPricedescription()}"></small></td>
+        <td><small th:text="${dd.getPrice()}"></small></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
