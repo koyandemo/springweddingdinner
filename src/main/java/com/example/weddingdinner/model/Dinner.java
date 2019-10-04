@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
@@ -16,21 +17,22 @@ public class Dinner {
     private String id;
 
     @Indexed(direction = IndexDirection.ASCENDING)
-    private String retaurantname;
-    private List<String> phonenumber;
+    private String restaurantname;
+    private String phonenumber;
     private String address;
-    private List<String> description;
-    private List<String> roomdescription;
-    private RoomFees roomfees;
-    private List<String> pricedescription;
-    private Price price;
+    private String description;
+    private String roomdescription;
+    private List<RoomFees> roomfees;
+    private String pricedescription;
+    @Field("price")
+    private List<Price> price;
 
 
     public Dinner() {
     }
 
-    public Dinner(String retaurantname, List<String> phonenumber, String address, List<String> description, List<String> roomdescription, RoomFees roomfees, List<String> pricedescription, Price price) {
-        this.retaurantname = retaurantname;
+    public Dinner(String restaurantname, String phonenumber, String address, String description, String roomdescription, List<RoomFees> roomfees, String pricedescription, List<Price> price) {
+        this.restaurantname = restaurantname;
         this.phonenumber = phonenumber;
         this.address = address;
         this.description = description;
@@ -48,19 +50,19 @@ public class Dinner {
         this.id = id;
     }
 
-    public String getRetaurantname() {
-        return retaurantname;
+    public String getRestaurantname() {
+        return restaurantname;
     }
 
-    public void setRetaurantname(String retaurantname) {
-        this.retaurantname = retaurantname;
+    public void setRestaurantname(String restaurantname) {
+        this.restaurantname = restaurantname;
     }
 
-    public List<String> getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(List<String> phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 
@@ -72,45 +74,45 @@ public class Dinner {
         this.address = address;
     }
 
-    public List<String> getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(List<String> description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public List<String> getRoomdescription() {
+    public String getRoomdescription() {
         return roomdescription;
     }
 
-    public void setRoomdescription(List<String> roomdescription) {
+    public void setRoomdescription(String roomdescription) {
         this.roomdescription = roomdescription;
     }
 
-    public RoomFees getRoomfees() {
+    public List<RoomFees> getRoomfees() {
         return roomfees;
     }
 
-    public void setRoomfees(RoomFees roomfees) {
+    public void setRoomfees(List<RoomFees> roomfees) {
         this.roomfees = roomfees;
     }
 
-    public List<String> getPricedescription() {
+    public String getPricedescription() {
         return pricedescription;
     }
 
-    public void setPricedescription(List<String> pricedescription) {
+    public void setPricedescription(String pricedescription) {
         this.pricedescription = pricedescription;
     }
 
-    public Price getPrice() {
+    public List<Price> getPrice() {
         return price;
     }
 
-    public void setPrice(Price price) {
+    public void setPrice(List<Price> price) {
         this.price = price;
     }
-
-
 }
+
+
